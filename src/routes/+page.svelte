@@ -5,7 +5,6 @@
     import { educationHistory } from './educationHistory.js'
 </script>
 
-<div class="card">
     <div class="container">
         <Header />
         
@@ -32,22 +31,23 @@
             {/each}
         </div>
     </div>
-</div>
 
 <style>
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-    }
-
     .container {
         padding: 2px 16px;
     }
 
     .content {
-        margin: auto;
-        width: 50%;
+        width: 100%;
         padding: 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .content {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
     }
 
     h2 {
