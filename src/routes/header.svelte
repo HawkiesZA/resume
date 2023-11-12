@@ -1,94 +1,55 @@
-
 <script>
+	import * as config from '$lib/config'
+	import Toggle from './toggle.svelte'
 </script>
 
-<div class="column">
-    <img src="/headshot.png" alt='Gerrit Vermeulen'/>
-    <div class="text">Gerrit Roebert Vermeulen</div>
-    <div class="text"><a href="mailto:gertznezz@gmail.com">gertznezz@gmail.com</a></div>
-    <div class="text">Languages: English, Afrikaans, Python, Kotlin, C, C++, Java, JS/TypeScript (NodeJS)</div>
-    <a class="btn" href="https://storage.googleapis.com/hawkiesza-resume/CV.pdf"><span>Download Full Resume</span></a>
-</div>
+<nav>
+  <!-- Title -->
+	<a href="/" class="title">
+		<b>{config.title}</b>
+	</a>
+
+  <!-- Navigation -->
+	<ul class="links">
+		<li>
+			<a href="/experience">Experience</a>
+		</li>
+		<li>
+			<a href="/blog">Blog</a>
+		</li>
+		<li>
+			<a href="/contact">Contact</a>
+		</li>
+	</ul>
+
+  <!-- Theme -->
+  <Toggle />
+</nav>
 
 <style>
-    .column {
-        width: 50%;
-        margin: auto;
-        text-align: center;
-    }
-    
-    img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-    }
+	nav {
+		padding-block: var(--size-7);
+	}
 
-    .text {
-        font-family: 'Courier New', Courier, monospace;
-        padding-bottom: 0.5em;
-    }
-    a {
-        text-decoration: none;
-    }
-    .btn {
-        position: relative;
+	.links {
+		margin-block: var(--size-7);
+	}
 
-        display: block;
-        margin: 30px auto;
-        padding: 0;
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
 
-        overflow: hidden;
+	@media (min-width: 768px) {
+		nav {
+			display: flex;
+			justify-content: space-between;
+		}
 
-        border-width: 0;
-        outline: none;
-        border-radius: 2px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-        
-        background-color: #e7e7e7;
-        color: black;
-        
-        transition: background-color .3s;
-    }
-    .btn:hover, .btn:focus {
-        background-color: #a8a8a8;
-    }
-
-    .btn > * {
-        position: relative;
-    }
-
-    .btn span {
-        font-family: 'Courier New', Courier, monospace;
-        display: block;
-        padding: 12px 24px;
-    }
-
-    .btn:before {
-        content: "";
-        
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        
-        display: block;
-        width: 0;
-        padding-top: 0;
-            
-        border-radius: 100%;
-        
-        background-color: rgba(236, 240, 241, .3);
-        
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-
-    .btn:active:before {
-        width: 120%;
-        padding-top: 120%;
-        
-        transition: width .2s ease-out, padding-top .2s ease-out;
-    }
+		.links {
+			display: flex;
+			gap: var(--size-7);
+			margin-block: 0;
+		}
+	}
 </style>
