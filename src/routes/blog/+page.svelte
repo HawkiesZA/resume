@@ -32,13 +32,21 @@
 		max-inline-size: var(--size-content-3);
 	}
 
+	@media only screen and (min-width: 768px) {
+        .post {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+    }
+
 	.post:not(:last-child) {
 		border-bottom: 1px solid var(--border);
 		padding-bottom: var(--size-7);
 	}
 
 	.title {
-		font-size: var(--font-size-fluid-3);
+		font-size: var(--font-size-fluid-2);
 		text-transform: capitalize;
 	}
 
